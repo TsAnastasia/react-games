@@ -1,0 +1,64 @@
+@import url("../vendor/normalize.css");
+
+.page {
+  margin: 0 auto;
+  padding: 0;
+  height: 100vh;
+  background-color: #ccc;
+}
+
+.page__header {
+  margin: 0 auto;
+  padding: 15px 10px 10px;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-image: linear-gradient(to bottom, #555 1%, #999, #ccc);
+  box-shadow: 0 2px 5px #333;
+}
+
+.page__title {
+  margin: 0;
+  font-size: 30px;
+  line-height: 34px;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.page__content {
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 768px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.page__footer {
+  margin: 0;
+  padding: 0;
+  max-width: 768px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #999;
+  background-image: linear-gradient(to top, #333, #ccc);
+}
+
+@media screen and (min-width: 768px) {
+  .page__footer {
+    padding-right: calc(50% - 384px);
+    padding-left: calc(50% - 384px);
+  }
+}
+
+.page__copyright {
+  margin: 10px;
+  padding: 0;
+  font-size: 12px;
+  line-height: 14px;
+  font-style: normal;
+  font-weight: normal;
+}

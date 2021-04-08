@@ -6,19 +6,20 @@
 5. Highlight cells on win.
 6. Show message when noone win. */
 import React from "react";
+import './App.css';
 import CrossZero from "./CrossZero/CrossZero";
 
 const App = () => {
   return (
     <div className="page">
       <header className="page__header">
-        <h1 class="page__title">Croos-Zero</h1>
+        <h1 className="page__title">Croos-Zero</h1>
       </header>
       <main className="page__content">
         <CrossZero />
       </main>
       <footer className="page__footer">
-        <p className="page__footer-copyright">
+        <p className="page__copyright">
           &copy; {`${new Date().getFullYear()}`} {/* React Games */},
           Анастасия&nbsp;Циберная
         </p>
