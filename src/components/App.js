@@ -11,15 +11,15 @@ import CrossZero from "./CrossZero/CrossZero";
 
 const App = () => {
   return (
-    <div className="page">
-      <header className="page__header">
-        <h1 className="page__title">Croos-Zero</h1>
+    <div className="app">
+      <header className="app__header">
+        <h1 className="app__title">Croos-Zero</h1>
       </header>
-      <main className="page__content">
+      <main className="app__content">
         <CrossZero />
       </main>
-      <footer className="page__footer">
-        <p className="page__copyright">
+      <footer className="app__footer">
+        <p className="app__copyright">
           &copy; {`${new Date().getFullYear()}`} {/* React Games */},
           Анастасия&nbsp;Циберная
         </p>
