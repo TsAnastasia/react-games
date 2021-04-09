@@ -29,8 +29,12 @@ const History = (props) => {
 
   return (
     <div className="history">
-      <button className="history__change-sort" type="button" onClick={changeSort}>
-        History <span>{isFromStart ? <>&darr;</> : <>&uarr;</>}</span>
+      <button
+        className="history__change-sort"
+        type="button"
+        onClick={changeSort}
+      >
+        History {isFromStart ? <>&darr;</> : <>&uarr;</>}
       </button>
       <ol className="history__moves">{moves}</ol>
     </div>
