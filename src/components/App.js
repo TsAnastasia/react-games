@@ -1,6 +1,6 @@
 /* TODO Cross-Zero:
 1. Show position (column, row) for each move.
-2. Style selected step in history.
+2. DONE: Style selected step in history.
 3. DONE: Rewrite Board with cycles for create cells.
 4. DONE: Add switch to sort moves in history.
 5. Highlight cells on win.
@@ -20,8 +20,9 @@ const App = () => {
       </main>
       <footer className="app__footer">
         <p className="app__copyright">
-          &copy; {`${new Date().getFullYear()}`} {/* React Games */},
-          Анастасия&nbsp;Циберная
+          &copy;{`${new Date().getFullYear()}`}{/* React Games */}, 
+          {/* Анастасия&nbsp;Циберная */}
+          {" "}Anastasia&nbsp;Tsibernaya
         </p>
       </footer>
     </div>
