@@ -1,6 +1,6 @@
-import React from 'react';
-import './CrossZero.css';
-import Board from './Board';
+import React from "react";
+import "./CrossZero.css";
+import Board from "./Board";
 
 function calculateWinner(squares) {
   const lines = [
@@ -22,87 +22,100 @@ function calculateWinner(squares) {
   return null;
 }
 
-class CrossZero extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      history: [{
-        squares: Array(9).fill(null),
-      }],
-      stepNumber: 0,
-      xIsNext: true,
-    }
-  }
+const CrossZero = (props) => {
+  const [history, setHistory] = React.useState([
+    { squares: Array(9).fill(null) },
+  ]);
+  const [current, setCurrent] = React.useState({
+    squares: Array(9).fill(null),
+  });
+  const [stepNumber, setStepNumber] = React.useState(0);
+  const [xIsNext, setXIsNext] = React.useState(true);
+  const [winner, setWinner] = React.useState(null);
+  const [isEndGame, setIsEndGame] = React.useState(false);
 
-  handleClick(i) {
-    const history = this.state.history.slice(0, this.state.stepNumber + 1);
-    const current = history[history.length - 1];
-    const squares = current.squares.slice();
+  const handleClick = (i) => {
+    const historyCopy = history.slice(0, stepNumber + 1);
+    const squares = historyCopy[historyCopy.length - 1].squares.slice();
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
-    this.setState({
-      history: history.concat([{ 
-        squares: squares, 
-      }]),
-      stepNumber: history.length,
-      xIsNext: !this.state.xIsNext,
-    });
-  }
-
-  jumpTo(step) {
-    this.setState({
-      stepNumber: step,
-      xIsNext: (step % 2) === 0,
-    })
-  }
-
-  render() {
-    const history = this.state.history;
-    const current = history[this.state.stepNumber];
-    const winner = calculateWinner(current.squares);
-    const isEndGame = winner || history.length === 10;
-    const moves = history.map((step, move) => {
-      const desc = move ? "Перейти к ходу #" + move : "К началу игры";
-      return (
-        <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
-        </li>
-      );
-    });
-    return (
-      <section className="cross-zero">
-        <h2 className={`cross-zero__status ${isEndGame && "cross-zero__status_end-game"}`}>
-          {winner ? (
-            <>
-              Won: <span className="cross-zero__winner">
-                {winner}
-              </span>
-            </>
-          ) : isEndGame ? (
-            <>No one won</>
-          ) : (
-            <>
-              Next move: <span className="cross-zero__player">
-                {this.state.xIsNext ? "X" : "O"}
-              </span>
-            </>
-          )}
-        </h2>
-        <div className="cross-zero__field">
-          <button className="cross-zero__button cross-zero__button_back" type="button">&larr;</button>
-          <Board
-            squares={current.squares}
-            onClick={(i) => this.handleClick(i)}
-          />
-          <button className="cross-zero__button cross-zero__button_next" type="button">&rarr;</button>
-        </div>
-        <button className="cross-zero__again" type="button">Again</button>
-        <ol className="cross-zero__moves">{moves}</ol>
-      </section>
+    squares[i] = xIsNext ? "X" : "O";
+    setHistory(
+      historyCopy.concat([
+        { squares: squares }
+      ])
     );
-  }
-}
+    setStepNumber(historyCopy.length);
+    setXIsNext(!xIsNext);
+  };
+
+  const jumpTo = (step) => {
+    setStepNumber(step);
+    setXIsNext(step % 2 === 0);
+  };
+
+  React.useEffect(() => {
+    setCurrent(history[stepNumber]);
+    setWinner(calculateWinner(current.squares));
+    setIsEndGame(winner || stepNumber === 9);
+  });
+  
+  return (
+    <section className="cross-zero">
+      <h2
+        className={`cross-zero__status ${
+          isEndGame && "cross-zero__status_end-game"
+        }`}
+      >
+        {winner ? (
+          <>
+            Won: <span className="cross-zero__winner">{winner}</span>
+          </>
+        ) : isEndGame ? (
+          <>No one won</>
+        ) : (
+          <>
+            Playing:{" "}
+            <span className="cross-zero__player">{xIsNext ? "X" : "O"}</span>
+          </>
+        )}
+      </h2>
+      <div className="cross-zero__field">
+        <button
+          className="cross-zero__button cross-zero__button_back"
+          type="button"
+        >
+          &larr;
+        </button>
+        <Board squares={current.squares} onClick={(i) => handleClick(i)} />
+        <button
+          className="cross-zero__button cross-zero__button_next"
+          type="button"
+        >
+          &rarr;
+        </button>
+      </div>
+      <button
+        className="cross-zero__again"
+        type="button"
+        onClick={() => jumpTo(0)}
+      >
+        Again
+      </button>
+      <ol className="cross-zero__moves">
+        {history.map((step, move) =>{
+          return (
+            <li key={move}>
+              <button type="button" onClick={() => jumpTo(move)}>
+                {move ? `Go to step ${move}`: 'To start'}
+              </button>
+            </li>
+          )
+        })}
+      </ol>
+    </section>
+  );
+};
 
 export default CrossZero;
