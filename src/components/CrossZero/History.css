@@ -1,0 +1,37 @@
+.history{
+  margin: 10px;
+  padding: 0;
+}
+
+.history__change-sort{
+  margin: 0 0 10px;
+  padding: 5px;
+  font-size: 18px;
+  list-style: 20px;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.history__moves {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+  gap: 5px;
+  border: 1px solid #0ff;
+}
+
+.history__moves-item{
+  margin: 0;
+  padding: 0;
+}
+
+.history__step{
+  padding: 2px;
+  border: 1px solid #ff0;
+}
+
+.history__step_active{
+  background-color: #0f0;
+}

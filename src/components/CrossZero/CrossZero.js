@@ -1,6 +1,7 @@
 import React from "react";
 import "./CrossZero.css";
 import Board from "./Board";
+import History from "./History";
 
 function calculateWinner(squares) {
   const lines = [
@@ -112,17 +113,7 @@ const CrossZero = (props) => {
       >
         Again
       </button>
-      <ol className="cross-zero__moves">
-        {history.map((step, move) =>{
-          return (
-            <li className="cross-zero__moves-item" key={move}>
-              <button className={`cross-zero__step ${stepNumber === move && "cross-zero__step_active"}`}type="button" onClick={() => jumpTo(move)}>
-                {move ? `Go to step ${move}`: 'To start'}
-              </button>
-            </li>
-          )
-        })}
-      </ol>
+      <History history={history.slice()} onJumpTo={jumpTo} currentStep={stepNumber}/>
     </section>
   );
 };
