@@ -1,4 +1,5 @@
 import React from 'react';
+import './CrossZero.css';
 import Board from './Board';
 
 function calculateWinner(squares) {
@@ -61,6 +62,7 @@ class CrossZero extends React.Component {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
+    const isEndGame = winner || history.length === 10;
     const moves = history.map((step, move) => {
       const desc = move ? "Перейти к ходу #" + move : "К началу игры";
       return (
@@ -69,22 +71,31 @@ class CrossZero extends React.Component {
         </li>
       );
     });
-    let status = winner
-      ? "Выиграл " + winner
-      : "Следующий ход: " + (this.state.xIsNext ? "X" : "O"); 
     return (
-      <div className="game">
-        <div className="game-board">
+      <section className="cross-zero">
+        <h2 className={`cross-zero__status ${isEndGame && "cross-zero__status_end-game"}`}>
+          {winner ? (
+            <>
+              Won: <span className="cross-zero__winner">{winner}</span>
+            </>
+          ) : isEndGame ? (
+            <>No one won</>
+          ) : (
+            <>
+              Next move: <span className="cross-zero__player">
+                {this.state.xIsNext ? "X" : "O"}
+              </span>
+            </>
+          )}
+        </h2>
+        <div className="cross-zero__board">
           <Board
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}
           />
         </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <ol>{moves}</ol>
-        </div>
-      </div>
+        <ol className="cross-zero__moves">{moves}</ol>
+      </section>
     );
   }
 }
