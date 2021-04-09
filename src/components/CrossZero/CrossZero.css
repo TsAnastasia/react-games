@@ -38,6 +38,25 @@
 }
 
 .cross-zero__moves {
-  margin-left: 20px;
-  align-self: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 5px;
+  border: 1px solid #0ff;
+  /* align-self: flex-start; */
+}
+
+.cross-zero__moves-item{
+  margin: 0;
+  padding: 0;
+}
+
+.cross-zero__step{
+  padding: 2px;
+  border: 1px solid #ff0;
+}
+
+.cross-zero__step_active{
+  background-color: #0f0;
 }

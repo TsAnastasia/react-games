@@ -115,8 +115,8 @@ const CrossZero = (props) => {
       <ol className="cross-zero__moves">
         {history.map((step, move) =>{
           return (
-            <li key={move}>
-              <button type="button" onClick={() => jumpTo(move)}>
+            <li className="cross-zero__moves-item" key={move}>
+              <button className={`cross-zero__step ${stepNumber === move && "cross-zero__step_active"}`}type="button" onClick={() => jumpTo(move)}>
                 {move ? `Go to step ${move}`: 'To start'}
               </button>
             </li>
