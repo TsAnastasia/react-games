@@ -1,37 +1,28 @@
-import React from 'react';
-import Square from "./Square";
+import React from "react";
+import "./Board.css";
 
-class Board extends React.Component {
-  renderSquare(i) {
+const Board = (props) => {
+  const renderSquare = (i) => {
     return (
-      <Square
-        value={this.props.squares[i]}
-        onClick={() => this.props.onClick(i)}
-      />
+      <button 
+        key={i} 
+        className="board__cell" 
+        onClick={() => props.onClick(i)}
+      >
+        {props.squares[i]}
+      </button>
     );
-  }
+  };
 
-  render() {
-    return (
-      <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
+  return (
+    <div className="board">
+      {[...Array(3)].map((item, row) => (
+        <div className="board__row" key={row}>
+          {[...Array(3)].map((item, column) => renderSquare(3 * row + column))}
         </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-      </div>
-    );
-  }
-}
+      ))}
+    </div>
+  );
+};
 
 export default Board;
