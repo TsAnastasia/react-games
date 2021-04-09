@@ -30,7 +30,8 @@ const CrossZero = (props) => {
     squares: Array(9).fill(null),
   });
   const [stepNumber, setStepNumber] = React.useState(0);
-  const [xIsNext, setXIsNext] = React.useState(true);
+  const [isXPlaying, setIsXPlaying] = React.useState(true);
+  // const [xIsNext, setXIsNext] = React.useState(true);
   const [winner, setWinner] = React.useState(null);
   const [isEndGame, setIsEndGame] = React.useState(false);
 
@@ -40,27 +41,35 @@ const CrossZero = (props) => {
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = xIsNext ? "X" : "O";
+    squares[i] = isXPlaying ? "X" : "O";
     setHistory(
       historyCopy.concat([
         { squares: squares }
       ])
     );
     setStepNumber(historyCopy.length);
-    setXIsNext(!xIsNext);
+    setIsXPlaying(!isXPlaying);
   };
+
+  const handleAgain = () => {
+    setStepNumber(0);
+    setIsXPlaying(true);
+    setHistory([
+      { squares: Array(9).fill(null) },
+    ]);
+  }
 
   const jumpTo = (step) => {
     setStepNumber(step);
-    setXIsNext(step % 2 === 0);
+    setIsXPlaying(step % 2 === 0);
   };
 
   React.useEffect(() => {
     setCurrent(history[stepNumber]);
     setWinner(calculateWinner(current.squares));
     setIsEndGame(winner || stepNumber === 9);
-  });
-  
+  }, [history, stepNumber, current.squares, winner]);
+
   return (
     <section className="cross-zero">
       <h2
@@ -77,7 +86,7 @@ const CrossZero = (props) => {
         ) : (
           <>
             Playing:{" "}
-            <span className="cross-zero__player">{xIsNext ? "X" : "O"}</span>
+            <span className="cross-zero__player">{isXPlaying ? "X" : "O"}</span>
           </>
         )}
       </h2>
@@ -99,7 +108,7 @@ const CrossZero = (props) => {
       <button
         className="cross-zero__again"
         type="button"
-        onClick={() => jumpTo(0)}
+        onClick={handleAgain}
       >
         Again
       </button>
