@@ -3,6 +3,7 @@
   padding: 0;
   height: 100vh;
   background-color: #ccc;
+  font-family: "Arial", "Helvetica", sans-serif;
 }
 
 .app__header {

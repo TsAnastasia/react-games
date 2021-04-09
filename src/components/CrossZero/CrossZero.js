@@ -76,7 +76,9 @@ class CrossZero extends React.Component {
         <h2 className={`cross-zero__status ${isEndGame && "cross-zero__status_end-game"}`}>
           {winner ? (
             <>
-              Won: <span className="cross-zero__winner">{winner}</span>
+              Won: <span className="cross-zero__winner">
+                {winner}
+              </span>
             </>
           ) : isEndGame ? (
             <>No one won</>
@@ -88,12 +90,15 @@ class CrossZero extends React.Component {
             </>
           )}
         </h2>
-        <div className="cross-zero__board">
+        <div className="cross-zero__field">
+          <button className="cross-zero__button cross-zero__button_back" type="button">&larr;</button>
           <Board
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}
           />
+          <button className="cross-zero__button cross-zero__button_next" type="button">&rarr;</button>
         </div>
+        <button className="cross-zero__again" type="button">Again</button>
         <ol className="cross-zero__moves">{moves}</ol>
       </section>
     );

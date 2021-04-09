@@ -1,0 +1,41 @@
+.cross-zero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cross-zero__status {
+  margin: 10px auto;
+  font-size: 22px;
+  line-height: 24px;
+  border: 1px solid #f00;
+}
+
+.cross-zero__status_end-game{
+  color: #ff0;
+}
+
+.cross-zero__field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cross-zero__button{
+  height: 30px;
+  width: 30px;
+  visibility: hidden;
+}
+.cross-zero__button_back{
+  color: #0f0;
+}
+
+.cross-zero__again{
+  visibility: hidden;
+}
+
+.cross-zero__moves {
+  margin-left: 20px;
+  align-self: flex-start;
+}
