@@ -1,3 +1,12 @@
+@keyframes rotation{
+  from{
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
 .board{
   display: flex;
   flex-direction: column;
@@ -5,6 +14,7 @@
   align-items: center;
   border: 1px solid #000;
   border-radius: 5px;
+  box-shadow: 0 2px 5px #333;
 }
 
 .board__row{
@@ -28,12 +38,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
 } 
 
 .board__cell_active{
-  border: 1px solid red;
+  border: 1px solid #059;
+  color: #059;
 }
 
 .board__cell_winner{
-  background-color: #ff0;
+  background-color: #09f5;
+  box-shadow: 0 2px 5px #333;
+  animation: rotation 5s linear 5;
 }

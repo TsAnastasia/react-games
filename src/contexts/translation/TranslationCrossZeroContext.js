@@ -5,13 +5,17 @@ export const translationCroossZero = {
     statusDraw: "Ничья",
     statusPlay: "Ходит",
     statusWon: "Выиграл",
-    againTitle: "Заново",
+    settingAgain: "Заново",
+    settingHistoryHide: "Скрыть историю",
+    settingHistoryShow: "Показать историю",
   },
   en: {
     statusDraw: "No one won",
     statusPlay: "Playing",
     statusWon: "Won",
-    againTitle: "Again",
+    settingAgain: "Again",
+    settingHistoryHide: "Hide History",
+    settingHistoryShow: "Show History",
   },
 };
 

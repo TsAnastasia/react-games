@@ -39,6 +39,7 @@ const CrossZero = (props) => {
   const [winner, setWinner] = React.useState(null);
   const [winnerCells, setWinnerCells] = React.useState(null);
   const [isEndGame, setIsEndGame] = React.useState(false);
+  const [isHistoryShow, setIsHistoryShow] = React.useState(true);
 
   const handleCellClick = (row, col) => {
     const index = row * 3 + col;
@@ -68,6 +69,10 @@ const CrossZero = (props) => {
     jumpTo(stepNumber - 1);
   }
 
+  const handleShowHistory = () => {
+    setIsHistoryShow(!isHistoryShow);
+  }
+
   const handleNextClick = () => {
     jumpTo(stepNumber + 1);
   }
@@ -94,9 +99,7 @@ const CrossZero = (props) => {
       />
       <div className="cross-zero__field">
         <button
-          className={`cross-zero__button ${
-            stepNumber === 0 && "cross-zero__button_hidden"
-          }`}
+          className={`cross-zero__button ${stepNumber === 0 && "cross-zero__button_hidden"}`}
           type="button"
           onClick={hadbleBackClick}
         >
@@ -109,27 +112,36 @@ const CrossZero = (props) => {
           winnerCells={winnerCells}
         />
         <button
-          className={`cross-zero__button ${
-            stepNumber === history.length - 1 && "cross-zero__button_hidden"
-          }`}
+          className={`cross-zero__button ${stepNumber === history.length - 1 && "cross-zero__button_hidden"}`}
           type="button"
           onClick={handleNextClick}
         >
           &rarr;
         </button>
       </div>
-      <button
-        className="cross-zero__again"
-        type="button"
-        onClick={handleAgainClick}
-      >
-        {translation.againTitle}
-      </button>
-      <History 
-        history={history} 
-        onJumpTo={jumpTo} 
-        currentStep={stepNumber} 
-      />
+      <div className="cross-zero__settings">
+        <button
+          className="cross-zero__setting"
+          type="button"
+          onClick={handleAgainClick}
+        >
+          {translation.settingAgain}
+        </button>
+        <button
+          className="cross-zero__setting"
+          type="button"
+          onClick={handleShowHistory}
+        >
+          {isHistoryShow ? translation.settingHistoryHide : translation.settingHistoryShow}
+        </button>
+      </div>
+      {isHistoryShow && (
+        <History 
+          history={history} 
+          onJumpTo={jumpTo} 
+          currentStep={stepNumber} 
+        />
+      )}
     </section>
   );
 };

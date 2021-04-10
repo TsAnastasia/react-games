@@ -5,7 +5,7 @@ export const translationApp = {
     CrossZero: "Крестики-Нолики",
   },
   en: {
-    CrossZero: "Cross-Zero",
+    CrossZero: "Tic tac toe",
   },
 };
 
