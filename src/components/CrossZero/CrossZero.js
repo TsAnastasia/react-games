@@ -60,6 +60,20 @@ const CrossZero = (props) => {
     ]);
   }
 
+  const hadbleBack = () => {
+    if (stepNumber === 0) return;
+    setStepNumber(stepNumber - 1);
+    setIsXPlaying(!isXPlaying);
+    /* setHistory(
+      history.slice(0, stepNumber)
+    ) */
+  }
+
+  const handleNext = () => {
+    setStepNumber(stepNumber + 1);
+    setIsXPlaying(!isXPlaying)
+  }
+
   const jumpTo = (step) => {
     setStepNumber(step);
     setIsXPlaying(step % 2 === 0);
@@ -93,15 +107,17 @@ const CrossZero = (props) => {
       </h2>
       <div className="cross-zero__field">
         <button
-          className="cross-zero__button cross-zero__button_back"
+          className={`cross-zero__button ${stepNumber === 0 && "cross-zero__button_hidden"}`}
           type="button"
+          onClick={hadbleBack}
         >
           &larr;
         </button>
         <Board squares={current.squares} onClick={(i) => handleClick(i)} />
         <button
-          className="cross-zero__button cross-zero__button_next"
+          className={`cross-zero__button ${stepNumber === (history.length - 1) && "cross-zero__button_hidden"}`}
           type="button"
+          onClick={handleNext}
         >
           &rarr;
         </button>

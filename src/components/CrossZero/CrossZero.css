@@ -1,4 +1,6 @@
 .cross-zero {
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,18 +19,32 @@
 }
 
 .cross-zero__field {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .cross-zero__button{
-  height: 30px;
-  width: 30px;
+  margin: 10px;
+  height: 40px;
+  width: 40px;
+  font-size: 24px;
+  line-height: 26px;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+}
+
+.cross-zero__button_hidden{
   visibility: hidden;
 }
-.cross-zero__button_back{
-  color: #0f0;
+
+@media screen and (max-width: 425px) {
+  .cross-zero__button{
+    display: none;
+  }
 }
 
 .cross-zero__again{
