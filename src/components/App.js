@@ -3,7 +3,7 @@
 2. DONE: Style selected step in history.
 3. DONE: Rewrite Board with cycles for create cells.
 4. DONE: Add switch to sort moves in history.
-5. Highlight cells on win.
+5. DONE: Highlight cells on win.
 6. DONE: Show message when noone win. 
 7. Add translation*/
 import React from "react";
