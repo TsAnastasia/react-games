@@ -32,21 +32,22 @@ const CrossZero = (props) => {
   });
   const [stepNumber, setStepNumber] = React.useState(0);
   const [isXPlaying, setIsXPlaying] = React.useState(true);
-  // const [xIsNext, setXIsNext] = React.useState(true);
   const [winner, setWinner] = React.useState(null);
   const [isEndGame, setIsEndGame] = React.useState(false);
 
-  const handleClick = (i) => {
+  const handleClick = (row, col) => {
+    const index = row * 3 + col;
     const historyCopy = history.slice(0, stepNumber + 1);
     const squares = historyCopy[historyCopy.length - 1].squares.slice();
-    if (calculateWinner(squares) || squares[i]) {
+    if (calculateWinner(squares) || squares[index]) {
       return;
     }
-    squares[i] = isXPlaying ? "X" : "O";
+    squares[index] = isXPlaying ? "X" : "O";
     setHistory(
-      historyCopy.concat([
-        { squares: squares }
-      ])
+      historyCopy.concat([{ 
+        squares: squares, 
+        activeCell: { row: row, column: col } 
+      },])
     );
     setStepNumber(historyCopy.length);
     setIsXPlaying(!isXPlaying);
@@ -55,23 +56,15 @@ const CrossZero = (props) => {
   const handleAgain = () => {
     setStepNumber(0);
     setIsXPlaying(true);
-    setHistory([
-      { squares: Array(9).fill(null) },
-    ]);
+    setHistory([history[0]]);
   }
 
   const hadbleBack = () => {
-    if (stepNumber === 0) return;
-    setStepNumber(stepNumber - 1);
-    setIsXPlaying(!isXPlaying);
-    /* setHistory(
-      history.slice(0, stepNumber)
-    ) */
+    jumpTo(stepNumber - 1);
   }
 
   const handleNext = () => {
-    setStepNumber(stepNumber + 1);
-    setIsXPlaying(!isXPlaying)
+    jumpTo(stepNumber + 1);
   }
 
   const jumpTo = (step) => {
@@ -113,7 +106,7 @@ const CrossZero = (props) => {
         >
           &larr;
         </button>
-        <Board squares={current.squares} onClick={(i) => handleClick(i)} />
+        <Board squares={current.squares} onClick={handleClick} />
         <button
           className={`cross-zero__button ${stepNumber === (history.length - 1) && "cross-zero__button_hidden"}`}
           type="button"

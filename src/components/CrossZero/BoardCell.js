@@ -1,7 +1,6 @@
 const BoardCell = (props) => {
   const handleClick = () =>{
-    const i = props.row * 3 + props.column;
-    props.onClick(i);
+    props.onClick(props.row, props.column);
   }
 
   return (

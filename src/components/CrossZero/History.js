@@ -10,7 +10,8 @@ const History = (props) => {
   };
 
   React.useEffect(() => {
-    const movesCopy = props.history.map((step, move) => (
+    const movesCopy = props.history.map((step, move) => {
+    return(
       <li className="history__moves-item" key={move}>
         <button
           className={`history__step ${
@@ -19,10 +20,10 @@ const History = (props) => {
           type="button"
           onClick={() => props.onJumpTo(move)}
         >
-          {move ? `Go to step ${move}` : "To start"}
+          {move ? `Go to step ${move} (${step.activeCell.row + 1}, ${step.activeCell.column + 1})` : "To start"}
         </button>
       </li>
-    ));
+    )});
     !isFromStart && movesCopy.reverse();
     setMoves(movesCopy);
   }, [props, isFromStart]);
