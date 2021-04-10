@@ -3,6 +3,7 @@ import "./CrossZero.css";
 import Board from "./Board";
 import History from "./History";
 import { TranslationCrossZeroContext } from "../../contexts/translation/TranslationCrossZeroContext";
+import Status from "./Status";
 
 function calculateWinner(squares) {
   const lines = [
@@ -86,40 +87,31 @@ const CrossZero = (props) => {
 
   return (
     <section className="cross-zero">
-      <h2
-        className={`cross-zero__status ${
-          isEndGame && "cross-zero__status_end-game"
-        }`}
-      >
-        {winner ? (
-          <>
-            Won: <span className="cross-zero__winner">{winner}</span>
-          </>
-        ) : isEndGame ? (
-          <>No one won</>
-        ) : (
-          <>
-            Playing:{" "}
-            <span className="cross-zero__player">{isXPlaying ? "X" : "O"}</span>
-          </>
-        )}
-      </h2>
+      <Status 
+        isEndGame={isEndGame} 
+        winner={winner} 
+        isXPlaying={isXPlaying} 
+      />
       <div className="cross-zero__field">
         <button
-          className={`cross-zero__button ${stepNumber === 0 && "cross-zero__button_hidden"}`}
+          className={`cross-zero__button ${
+            stepNumber === 0 && "cross-zero__button_hidden"
+          }`}
           type="button"
           onClick={hadbleBackClick}
         >
           &larr;
         </button>
-        <Board 
-          squares={current.squares} 
+        <Board
+          squares={current.squares}
           onClick={handleCellClick}
           activeCell={current.activeCell || null}
-          winnerCells={winnerCells} 
+          winnerCells={winnerCells}
         />
         <button
-          className={`cross-zero__button ${stepNumber === (history.length - 1) && "cross-zero__button_hidden"}`}
+          className={`cross-zero__button ${
+            stepNumber === history.length - 1 && "cross-zero__button_hidden"
+          }`}
           type="button"
           onClick={handleNextClick}
         >
@@ -136,7 +128,7 @@ const CrossZero = (props) => {
       <History 
         history={history} 
         onJumpTo={jumpTo} 
-        currentStep={stepNumber}
+        currentStep={stepNumber} 
       />
     </section>
   );
