@@ -6,7 +6,7 @@ const BoardCell = (props) => {
   return (
     <button 
       type="button"
-      className="board__cell" 
+      className={`board__cell ${props.isActive && "board__cell_active"}`} 
       onClick={handleClick}>
       {props.squares[props.row * 3 + props.column]}
     </button>

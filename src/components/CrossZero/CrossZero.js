@@ -35,7 +35,7 @@ const CrossZero = (props) => {
   const [winner, setWinner] = React.useState(null);
   const [isEndGame, setIsEndGame] = React.useState(false);
 
-  const handleClick = (row, col) => {
+  const handleCellClick = (row, col) => {
     const index = row * 3 + col;
     const historyCopy = history.slice(0, stepNumber + 1);
     const squares = historyCopy[historyCopy.length - 1].squares.slice();
@@ -53,17 +53,17 @@ const CrossZero = (props) => {
     setIsXPlaying(!isXPlaying);
   };
 
-  const handleAgain = () => {
+  const handleAgainClick = () => {
     setStepNumber(0);
     setIsXPlaying(true);
     setHistory([history[0]]);
   }
 
-  const hadbleBack = () => {
+  const hadbleBackClick = () => {
     jumpTo(stepNumber - 1);
   }
 
-  const handleNext = () => {
+  const handleNextClick = () => {
     jumpTo(stepNumber + 1);
   }
 
@@ -102,15 +102,19 @@ const CrossZero = (props) => {
         <button
           className={`cross-zero__button ${stepNumber === 0 && "cross-zero__button_hidden"}`}
           type="button"
-          onClick={hadbleBack}
+          onClick={hadbleBackClick}
         >
           &larr;
         </button>
-        <Board squares={current.squares} onClick={handleClick} />
+        <Board 
+          squares={current.squares} 
+          onClick={handleCellClick}
+          activeCell={current.activeCell || null} 
+        />
         <button
           className={`cross-zero__button ${stepNumber === (history.length - 1) && "cross-zero__button_hidden"}`}
           type="button"
-          onClick={handleNext}
+          onClick={handleNextClick}
         >
           &rarr;
         </button>
@@ -118,7 +122,7 @@ const CrossZero = (props) => {
       <button
         className="cross-zero__again"
         type="button"
-        onClick={handleAgain}
+        onClick={handleAgainClick}
       >
         Again
       </button>

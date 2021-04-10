@@ -14,6 +14,7 @@ const Board = (props) => {
               row={row}
               column={column}
               squares={props.squares}
+              isActive={props.activeCell.row === row && props.activeCell.column === column}
             />
           ))}
         </div>

@@ -1,5 +1,5 @@
 /* TODO Cross-Zero:
-1. Show position (column, row) for each move.
+1. DONE: Show position (column, row) for each move.
 2. DONE: Style selected step in history.
 3. DONE: Rewrite Board with cycles for create cells.
 4. DONE: Add switch to sort moves in history.
