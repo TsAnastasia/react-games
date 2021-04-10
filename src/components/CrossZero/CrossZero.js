@@ -113,7 +113,11 @@ const CrossZero = (props) => {
       >
         Again
       </button>
-      <History history={history} onJumpTo={jumpTo} currentStep={stepNumber}/>
+      <History 
+        history={history} 
+        onJumpTo={jumpTo} 
+        currentStep={stepNumber}
+      />
     </section>
   );
 };
