@@ -1,16 +1,9 @@
-/* TODO Cross-Zero:
-1. DONE: Show position (column, row) for each move.
-2. DONE: Style selected step in history.
-3. DONE: Rewrite Board with cycles for create cells.
-4. DONE: Add switch to sort moves in history.
-5. DONE: Highlight cells on win.
-6. DONE: Show message when noone win. 
-7. Add translation*/
 import React from "react";
 import { translationApp, TranslationAppContext } from "../contexts/translation/TranslationAppContext";
 import { translationCroossZero, TranslationCrossZeroContext } from "../contexts/translation/TranslationCrossZeroContext";
 import './App.css';
 import CrossZero from "./CrossZero/CrossZero";
+import Footer from "./Footer";
 import Header from "./Header";
 
 const App = () => {
@@ -25,13 +18,7 @@ const App = () => {
             <CrossZero lang={lang}/>
           </TranslationCrossZeroContext.Provider>
         </main>
-        <footer className="app__footer">
-          <p className="app__copyright">
-            &copy;{`${new Date().getFullYear()}`}{/* React Games */}, 
-            {/* Анастасия&nbsp;Циберная */}
-            {" "}Anastasia&nbsp;Tsibernaya
-          </p>
-        </footer>
+        <Footer />
       </div>
     </TranslationAppContext.Provider>
   );

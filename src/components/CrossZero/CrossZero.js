@@ -39,7 +39,7 @@ const CrossZero = (props) => {
   const [winner, setWinner] = React.useState(null);
   const [winnerCells, setWinnerCells] = React.useState(null);
   const [isEndGame, setIsEndGame] = React.useState(false);
-  const [isHistoryShow, setIsHistoryShow] = React.useState(true);
+  const [isHistoryShow, setIsHistoryShow] = React.useState(false);
 
   const handleCellClick = (row, col) => {
     const index = row * 3 + col;
