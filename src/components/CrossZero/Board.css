@@ -41,13 +41,25 @@
   background-color: #fff;
 } 
 
+.board__cell:hover:not(:disabled){
+  transform: scale(1.1);
+  border-radius: 10%;
+}
+
+.board__cell:disabled{
+  color: #000;
+}
+
 .board__cell_active{
   border: 1px solid #059;
   color: #059;
 }
 
+.board__cell_active:disabled{
+  color: #059;
+}
+
 .board__cell_winner{
   background-color: #09f5;
-  box-shadow: 0 2px 5px #333;
-  animation: rotation 5s linear 5;
+  animation: rotation 5s linear 1;
 }

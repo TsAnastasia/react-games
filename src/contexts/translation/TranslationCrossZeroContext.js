@@ -8,6 +8,9 @@ export const translationCroossZero = {
     settingAgain: "Заново",
     settingHistoryHide: "Скрыть историю",
     settingHistoryShow: "Показать историю",
+    historyTitle: "История",
+    historyStart: "Перейти к началу",
+    historyMove: "К ходу"
   },
   en: {
     statusDraw: "No one won",
@@ -16,6 +19,9 @@ export const translationCroossZero = {
     settingAgain: "Again",
     settingHistoryHide: "Hide History",
     settingHistoryShow: "Show History",
+    historyTitle: "History",
+    historyStart: "Go to start",
+    historyMove: "To step"
   },
 };
 

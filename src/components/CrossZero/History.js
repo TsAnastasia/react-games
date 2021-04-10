@@ -1,7 +1,9 @@
 import React from "react";
+import { TranslationCrossZeroContext } from "../../contexts/translation/TranslationCrossZeroContext";
 import "./History.css";
 
 const History = (props) => {
+  const translation = React.useContext(TranslationCrossZeroContext);
   const [isFromStart, setIsFromStart] = React.useState(true);
   const [moves, setMoves] = React.useState([]);
 
@@ -20,22 +22,22 @@ const History = (props) => {
           type="button"
           onClick={() => props.onJumpTo(move)}
         >
-          {move ? `Go to step ${move} (${step.activeCell.row + 1}, ${step.activeCell.column + 1})` : "To start"}
+          {move ? `${translation.historyMove} ${move} (${step.activeCell.row + 1}, ${step.activeCell.column + 1})` : translation.historyStart}
         </button>
       </li>
     )});
     !isFromStart && movesCopy.reverse();
     setMoves(movesCopy);
-  }, [props, isFromStart]);
+  }, [props, isFromStart, translation]);
 
   return (
     <div className="history">
       <button
-        className="history__change-sort"
+        className="history__title"
         type="button"
         onClick={changeSort}
       >
-        History {isFromStart ? <>&darr;</> : <>&uarr;</>}
+        {translation.historyTitle} {isFromStart ? <>&darr;</> : <>&uarr;</>}
       </button>
       <ol className="history__moves">{moves}</ol>
     </div>

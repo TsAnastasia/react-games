@@ -13,7 +13,7 @@
   line-height: 24px;
 }
 
-.cross-zero__status_end-game{
+.cross-zero__status_end-game {
   color: #09f;
 }
 
@@ -24,28 +24,29 @@
   align-items: center;
 }
 
-.cross-zero__button{
+.cross-zero__button {
   margin: 10px;
-  height: 40px;
+  height: 30px;
   width: 40px;
   font-size: 24px;
   line-height: 26px;
   background-color: transparent;
   border: 0;
   outline: 0;
-  border-radius: 0;
+  border-radius: 50%;
 }
 
-.cross-zero__button_hidden{
+.cross-zero__button_hidden {
   visibility: hidden;
 }
 
-.cross-zero__again{
-  margin: 10px;
-  padding: 5px;
+.cross-zero__button:hover {
+  box-shadow: 0 2px 5px #333;
+  opacity: 0.8;
+  cursor: pointer;
 }
 
-.cross-zero__settings{
+.cross-zero__settings {
   padding: 5px 10px;
   min-width: 300px;
   display: flex;
@@ -53,7 +54,7 @@
   align-items: center;
 }
 
-.cross-zero__setting{
+.cross-zero__setting {
   margin: 10px;
   padding: 5px;
   font-size: 16px;
@@ -62,16 +63,22 @@
   font-weight: normal;
   outline: 0;
   border: 0;
-  border-radius: 0;
+  border-radius: 5px;
   background-color: transparent;
+}
+
+.cross-zero__setting:hover {
+  box-shadow: 0 2px 5px #333;
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 425px) {
   .cross-zero__field {
     justify-content: center;
-    }
+  }
 
-  .cross-zero__button{
+  .cross-zero__button {
     display: none;
   }
 }

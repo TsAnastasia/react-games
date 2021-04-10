@@ -110,6 +110,7 @@ const CrossZero = (props) => {
           onClick={handleCellClick}
           activeCell={current.activeCell || null}
           winnerCells={winnerCells}
+          isEndGame={isEndGame}
         />
         <button
           className={`cross-zero__button ${stepNumber === history.length - 1 && "cross-zero__button_hidden"}`}
