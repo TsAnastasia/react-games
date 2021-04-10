@@ -2,6 +2,7 @@ import React from "react";
 import "./CrossZero.css";
 import Board from "./Board";
 import History from "./History";
+import { TranslationCrossZeroContext } from "../../contexts/translation/TranslationCrossZeroContext";
 
 function calculateWinner(squares) {
   const lines = [
@@ -24,6 +25,8 @@ function calculateWinner(squares) {
 }
 
 const CrossZero = (props) => {
+  const translation = React.useContext(TranslationCrossZeroContext);
+
   const [history, setHistory] = React.useState([
     { squares: Array(9).fill(null) },
   ]);
@@ -128,7 +131,7 @@ const CrossZero = (props) => {
         type="button"
         onClick={handleAgainClick}
       >
-        Again
+        {translation.againTitle}
       </button>
       <History 
         history={history} 
