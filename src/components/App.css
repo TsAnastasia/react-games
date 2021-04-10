@@ -10,20 +10,6 @@
   margin: 0 auto;
   padding: 15px 10px 10px;
   max-width: 500px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  color: #059;
-  background-image: linear-gradient(to bottom, #999, #ccc);
-  box-shadow: 0 2px 5px #333;
-}
-
-.app__title {
-  margin: 0;
-  font-size: 30px;
-  line-height: 34px;
-  font-style: normal;
-  font-weight: bold;
 }
 
 .app__content {

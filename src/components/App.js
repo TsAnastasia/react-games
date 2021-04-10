@@ -11,6 +11,7 @@ import { translationApp, TranslationAppContext } from "../contexts/translation/T
 import { translationCroossZero, TranslationCrossZeroContext } from "../contexts/translation/TranslationCrossZeroContext";
 import './App.css';
 import CrossZero from "./CrossZero/CrossZero";
+import Header from "./Header";
 
 const App = () => {
   const [lang, setLang] = React.useState('en');
@@ -18,13 +19,7 @@ const App = () => {
   return (
     <TranslationAppContext.Provider value={translationApp[lang]}>
       <div className="app">
-        <header className="app__header">
-            <div>
-            <button type="button" onClick={()=> setLang('en')}>en</button>
-            <button type="button" onClick={()=> setLang('ru')}>ru</button>
-          </div>
-          <h1 className="app__title">Croos-Zero</h1>
-        </header>
+        <Header setLang={setLang} />
         <main className="app__content">
           <TranslationCrossZeroContext.Provider value={translationCroossZero[lang]}>
             <CrossZero lang={lang}/>
