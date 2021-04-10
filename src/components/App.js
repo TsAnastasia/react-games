@@ -7,7 +7,7 @@
 6. DONE: Show message when noone win. 
 7. Add translation*/
 import React from "react";
-import { translationApp, TranslationAppContext } from "../contexts/translation/TranslationApp";
+import { translationApp, TranslationAppContext } from "../contexts/translation/TranslationAppContext";
 import { translationCroossZero, TranslationCrossZeroContext } from "../contexts/translation/TranslationCrossZeroContext";
 import './App.css';
 import CrossZero from "./CrossZero/CrossZero";
