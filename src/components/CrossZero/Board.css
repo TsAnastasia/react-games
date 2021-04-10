@@ -1,6 +1,6 @@
 .board{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 1px solid #000;
@@ -8,7 +8,10 @@
 }
 
 .board__row{
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .board__cell{
@@ -21,10 +24,11 @@
   font-style: normal;
   border-radius: 0;
   border: 1px solid #000;
+  outline: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} 
 
 .board__cell_active{
   background-color: #444;

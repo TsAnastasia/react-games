@@ -41,14 +41,18 @@
   visibility: hidden;
 }
 
-@media screen and (max-width: 425px) {
-  .cross-zero__button{
-    display: none;
-  }
-}
 
 .cross-zero__again{
   margin: 10px;
   padding: 5px;
-  /* visibility: hidden; */
+}
+
+@media screen and (max-width: 425px) {
+  .cross-zero__field {
+    justify-content: center;
+    }
+
+  .cross-zero__button{
+    display: none;
+  }
 }
