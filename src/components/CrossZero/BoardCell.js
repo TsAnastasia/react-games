@@ -6,7 +6,7 @@ const BoardCell = (props) => {
   return (
     <button 
       type="button"
-      className={`board__cell ${props.isActive && "board__cell_active"}`} 
+      className={`board__cell ${props.isActive && "board__cell_active"} ${props.isWinner && "board__cell_winner"}`} 
       onClick={handleClick}>
       {props.squares[props.row * 3 + props.column]}
     </button>

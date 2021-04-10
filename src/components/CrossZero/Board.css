@@ -31,5 +31,9 @@
 } 
 
 .board__cell_active{
-  background-color: #444;
+  border: 1px solid red;
+}
+
+.board__cell_winner{
+  background-color: #ff0;
 }

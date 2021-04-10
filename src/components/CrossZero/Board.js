@@ -14,7 +14,8 @@ const Board = (props) => {
               row={row}
               column={column}
               squares={props.squares}
-              isActive={props.activeCell.row === row && props.activeCell.column === column}
+              isActive={props.activeCell && props.activeCell.row === row && props.activeCell.column === column}
+              isWinner={props.winnerCells && props.winnerCells.some(item => item === 3 * row + column)}
             />
           ))}
         </div>

@@ -17,10 +17,10 @@ function calculateWinner(squares) {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+      return {winner: squares[a], winnerCells: [a,b,c]};
     }
   }
-  return null;
+  return {winner: null, winnerCells: null};
 }
 
 const CrossZero = (props) => {
@@ -33,13 +33,14 @@ const CrossZero = (props) => {
   const [stepNumber, setStepNumber] = React.useState(0);
   const [isXPlaying, setIsXPlaying] = React.useState(true);
   const [winner, setWinner] = React.useState(null);
+  const [winnerCells, setWinnerCells] = React.useState(null);
   const [isEndGame, setIsEndGame] = React.useState(false);
 
   const handleCellClick = (row, col) => {
     const index = row * 3 + col;
     const historyCopy = history.slice(0, stepNumber + 1);
     const squares = historyCopy[historyCopy.length - 1].squares.slice();
-    if (calculateWinner(squares) || squares[index]) {
+    if (calculateWinner(squares).winner || squares[index]) {
       return;
     }
     squares[index] = isXPlaying ? "X" : "O";
@@ -74,7 +75,9 @@ const CrossZero = (props) => {
 
   React.useEffect(() => {
     setCurrent(history[stepNumber]);
-    setWinner(calculateWinner(current.squares));
+    const calcWin= calculateWinner(current.squares);
+    setWinner(calcWin.winner);
+    setWinnerCells(calcWin.winnerCells);
     setIsEndGame(winner || stepNumber === 9);
   }, [history, stepNumber, current.squares, winner]);
 
@@ -109,7 +112,8 @@ const CrossZero = (props) => {
         <Board 
           squares={current.squares} 
           onClick={handleCellClick}
-          activeCell={current.activeCell || null} 
+          activeCell={current.activeCell || null}
+          winnerCells={winnerCells} 
         />
         <button
           className={`cross-zero__button ${stepNumber === (history.length - 1) && "cross-zero__button_hidden"}`}
