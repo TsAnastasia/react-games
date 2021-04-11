@@ -6,6 +6,8 @@ This is a simple app to understand the React with interactive game tic-tac-toe.
 
 **Author:** Anastasia Tsibernaya, 2021
 
+**[Try](https://tsanastasia.github.io/react-games)**
+
 ## Scripts
 
 In the project directory, you can run:
