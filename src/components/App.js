@@ -5,6 +5,7 @@ import './App.css';
 import CrossZero from "./CrossZero/CrossZero";
 import Footer from "./Footer";
 import Header from "./Header";
+import Memory from "./Memory/Memory";
 
 const App = () => {
   const [lang, setLang] = React.useState('en');
@@ -14,9 +15,10 @@ const App = () => {
       <div className="app">
         <Header setLang={setLang} />
         <main className="app__content">
-          <TranslationCrossZeroContext.Provider value={translationCroossZero[lang]}>
+          <Memory />
+          {/* <TranslationCrossZeroContext.Provider value={translationCroossZero[lang]}>
             <CrossZero lang={lang}/>
-          </TranslationCrossZeroContext.Provider>
+          </TranslationCrossZeroContext.Provider> */}
         </main>
         <Footer />
       </div>
