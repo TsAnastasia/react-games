@@ -34,10 +34,10 @@ const CardsArea = ({cards, rotateCard}) => {
 
 const Memory = () => {
   const timeDelay = 500;
-  const simvols = [1, 2, 3, 4, 5, 6];
+  const simvols = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   //const [simvolsPlay, setSimvolsPlay] = React.useState([]);
   //const countCard = 4;
-  const countCardPairs = 2;
+  const [countCardPairs, setCountCardPairs] = React.useState(4);
   const [openCards, setOpenCards] = React.useState({counter: 0})
   const [rotateCards, setRotateCards] = React.useState([])
   const [cards, setCards] = React.useState([]);
@@ -105,13 +105,20 @@ const Memory = () => {
     setIsEndGame(false);
   }
 
+  const hadndleCountCardsChange = (event) => {
+    setCountCardPairs(event.target.value / 2);
+  }
+
   React.useEffect(()=>{
     handleGameAgain();
   }, [])
 
-  React.useEffect(()=> {    
+  React.useEffect(()=>{
+    handleGameAgain();
+  }, [countCardPairs])
+
+  React.useEffect(() => {
     if (rotateCards.length === 2) {
-      
       if (rotateCards[0].value === rotateCards[1].value) {
         handleCardOpen();
       } else {
@@ -119,7 +126,7 @@ const Memory = () => {
       }
       setRotateCards([]);
     }
-  }, [rotateCards])
+  }, [rotateCards]);
 
 
   return (
@@ -128,10 +135,14 @@ const Memory = () => {
       <LoadingContext.Provider value={isLoading}>
         <CardsArea rotateCard={handleCardRotate} cards={cards}/>
       </LoadingContext.Provider>
+      <p className="game__description">Description</p>
       <div className="game__settings">
         <button type="button" className="setting__again" onClick={handleGameAgain}>again</button>
+        <div>
+          <input type="range" min="4" max={simvols.length * 2} step="2" value={countCardPairs * 2} onChange={hadndleCountCardsChange}/>
+          <p>{countCardPairs * 2}</p>
+        </div>
       </div>
-      <p className="game__description">Соотвнеси одинаковые</p>
     </section>
   );
 };
