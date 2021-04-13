@@ -129,8 +129,6 @@ const Memory = () => {
       <div className="images">
         {values.map(value =>
           <Picture key={value} color={`${openCards.values.some(item => value === item)? "#ff0" : "#0ff"}`} index={value} />)}
-        {/* {simvols.map((item, index) => 
-          )} */}
       </div>
     </section>
   );

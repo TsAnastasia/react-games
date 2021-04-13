@@ -2,14 +2,24 @@ import React from "react";
 
 export const translationApp = {
   ru: {
-    AuthorName: "Анастасия",
-    AuthorLastName: "Циберная",
-    CrossZero: "Крестики-Нолики",
+    authorName: "Анастасия",
+    authorLastName: "Циберная",
+    projectName: "Игры на React",
+    home: "Игры на React",
+    crossZero: "Крестики-Нолики",
+    memory: "Парочки",
+    notFoundPageTitle: "404 - Страница не найдена",
+    notFoundPageDescription: "Здесь ничего нет."
   },
   en: {
-    AuthorName: "Anastasia",
-    AuthorLastName: "Tsibernaya",
-    CrossZero: "Tic tac toe",
+    authorName: "Anastasia",
+    authorLastName: "Tsibernaya",
+    projectName: "Games on React",
+    home: "Some games on React",
+    crossZero: "Tic tac toe",
+    memory: "Memory (pairs)",
+    notFoundPageTitle: "404 - Page not found",
+    notFoundPageDescription: "There's nothing here."
   },
 };
 

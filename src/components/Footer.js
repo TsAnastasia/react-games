@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="app__footer">
       <p className="app__copyright">
-        &copy; {/* React Games */} {`${new Date().getFullYear()}, ${translation.AuthorName} ${translation.AuthorLastName}`}
+        &copy;{` ${translation.projectName} ${new Date().getFullYear()}, ${translation.authorName} ${translation.authorLastName}`}
       </p>
     </footer>
   );
