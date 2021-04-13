@@ -1,6 +1,9 @@
 import React from 'react';
-import { LoadingContext } from '../../contexts/LoadingContext';
 import "./Memory.css";
+//import { getImages } from '../utils/getImages';
+
+import { LoadingContext } from '../../contexts/LoadingContext';
+import Picture from '../Picture';
 
 const Card = ({ card, onRotate }) => {
   const isLoading = React.useContext(LoadingContext);
@@ -13,7 +16,8 @@ const Card = ({ card, onRotate }) => {
     <li className="memory__item card" onClick={handleClick}>
       <div className="card__area">{`Memory`} {card.value}</div>
       <div className={`card__image ${card.isHidden && "card__image_hidden"}`}>
-        <p>{card.value}</p>
+        <Picture index={card.value} color={card.isOpen ? "#000" : "#0ff"}/>
+        {card.image}
         {/* {`${card.value} O=${card.isOpen} h=${card.isHidden}`} */}
       </div>
     </li>
@@ -93,12 +97,13 @@ const Memory = () => {
   };
 
   const handleGameAgain = () => {
+    //const images = getImages({size: countCardPairs * 2});
     simvols.sort(() => Math.random() - 0.5);
     const simvolsGame = simvols.slice(0, countCardPairs);
     const values = simvolsGame.concat(simvolsGame).sort(() => Math.random() - 0.5);
     setCards(
       values.map((value, index) => {
-        return { value, id: index, isHidden: true, isOpen: false };
+        return { value, id: index, isHidden: true, isOpen: false};
       })
     );
     setOpenCards({...openCards, counter: 0});
@@ -142,6 +147,11 @@ const Memory = () => {
           <input type="range" min="4" max={simvols.length * 2} step="2" value={countCardPairs * 2} onChange={hadndleCountCardsChange}/>
           <p>{countCardPairs * 2}</p>
         </div>
+      </div>
+      <div className="images">
+        {/* {getImages({color: '#ff0', size: "25"}).map((item, index)=> <div key={index} className="image">{item}</div>)} */}
+        {[...Array(12)].map((item, index) => 
+          <Picture key={index} color="#ff0" index={index} />)}
       </div>
     </section>
   );
