@@ -1,5 +1,3 @@
-import React from "react";
-
 const Picture = ({ index = "0", color = "#000", size = "20" }) => {
   const images = [
     <svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
