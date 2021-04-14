@@ -1,0 +1,13 @@
+.history__moves {
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+  list-style: none;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-auto-columns: minmax(140px, 1fr);
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  gap: 10px;
+}

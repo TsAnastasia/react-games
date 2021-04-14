@@ -3,8 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 import { translationApp, TranslationAppContext } from "../contexts/translation/TranslationAppContext";
 import { translationCroossZero, TranslationCrossZeroContext } from "../contexts/translation/TranslationCrossZeroContext";
 import { translationMemory, TranslationMemoryContext } from "../contexts/translation/TranslationMemoryContext";
-import './App.css';
-import CrossZero from "./CrossZero/CrossZero";
+import '../styles/App.css';
+import { BASE_URL } from "../utils/constants";
+import CrossZeros from "./CrossZeros/CrossZeros";
 import Footer from "./Footer";
 import Header from "./Header";
 import Home from "./Home";
@@ -21,15 +22,15 @@ const App = () => {
 
         <main className="app__content">
           <Switch>
-            <Route exact path="/">
+            <Route exact path={`${BASE_URL}`}>
               <Home />
             </Route>
-            <Route exact path="/cross-zeros">
+            <Route path={`${BASE_URL}/cross-zeros`}>
               <TranslationCrossZeroContext.Provider value={translationCroossZero[lang]}>
-                <CrossZero/>
+                <CrossZeros/>
               </TranslationCrossZeroContext.Provider>
             </Route>
-            <Route exact path="/memory">
+            <Route path={`${BASE_URL}/memory`}>
               <TranslationMemoryContext.Provider value={translationMemory[lang]}>
                <Memory />
               </TranslationMemoryContext.Provider>

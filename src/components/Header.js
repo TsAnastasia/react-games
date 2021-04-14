@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { TranslationAppContext } from '../contexts/translation/TranslationAppContext';
-import './Header.css'
+import { BASE_URL } from '../utils/constants';
 
 const Header = (props) => {
   const translation = React.useContext(TranslationAppContext);
@@ -19,12 +19,8 @@ const Header = (props) => {
         {langs.map((lang, index) => (
           <li key={lang} className="header__langs-item">
             <span
-              className={`header__lang ${
-                activeLang === index && "header__lang_active"
-              }`}
-              onClick={() => {
-                handleLangClick(index);
-              }}
+              className={`header__lang ${ activeLang === index && "header__lang_active"}`}
+              onClick={() => handleLangClick(index)}
             >
               {lang}
             </span>
@@ -33,9 +29,9 @@ const Header = (props) => {
       </ul>
       <h1 className="header__title">
         <Switch>
-          <Route exact path="/">{translation.home}</Route>
-          <Route path="/cross-zeros">{translation.crossZero}</Route>
-          <Route path="/memory">{translation.memory}</Route>
+          <Route exact path={`${BASE_URL}`}>{translation.home}</Route>
+          <Route path={`${BASE_URL}/cross-zeros`}>{translation.crossZero}</Route>
+          <Route path={`${BASE_URL}/memory`}>{translation.memory}</Route>
         </Switch>
       </h1>
     </header>

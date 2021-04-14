@@ -4,7 +4,7 @@ export const translationCroossZero = {
   ru: {
     statusDraw: "Ничья",
     statusPlay: "Ходит",
-    statusWon: "Выиграл",
+    statusWon: "выиграл",
     settingAgain: "Заново",
     settingHistoryHide: "Скрыть историю",
     settingHistoryShow: "Показать историю",
@@ -15,7 +15,7 @@ export const translationCroossZero = {
   en: {
     statusDraw: "No one won",
     statusPlay: "Playing",
-    statusWon: "Won",
+    statusWon: "won",
     settingAgain: "Again",
     settingHistoryHide: "Hide History",
     settingHistoryShow: "Show History",

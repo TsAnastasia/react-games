@@ -1,0 +1,9 @@
+.app__content {
+  margin: 10px auto;
+  padding: 0 10px;
+  width: 90%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}

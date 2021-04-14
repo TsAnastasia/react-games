@@ -1,0 +1,13 @@
+.cross-zeros__field {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 425px) {
+  .cross-zeros__field {
+    justify-content: center;
+  }
+}

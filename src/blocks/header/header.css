@@ -1,0 +1,8 @@
+.header {
+  position: relative;
+  background-image: linear-gradient(to bottom, #999, #ccc);
+  box-shadow: 0 2px 5px #333;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}

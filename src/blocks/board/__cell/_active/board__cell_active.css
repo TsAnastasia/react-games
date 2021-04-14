@@ -1,0 +1,8 @@
+.board__cell_active {
+  border: 1px solid #059;
+  color: #059;
+}
+
+.board__cell_active:disabled {
+  color: #059;
+}

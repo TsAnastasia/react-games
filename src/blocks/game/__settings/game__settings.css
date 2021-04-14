@@ -1,0 +1,7 @@
+.game__settings {
+  padding: 5px 10px;
+  min-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

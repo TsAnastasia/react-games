@@ -1,5 +1,5 @@
 import React from "react";
-import { MemoryMaxPairCards } from "../../utils/constants";
+import { MEMORY_MAX_PAIR_CARDS } from "../../utils/constants";
 
 const Setting = ({ onRestart, onChangePairCards, countPairCard }) => {
   const [countPairs, setCountState] = React.useState(countPairCard);
@@ -23,7 +23,7 @@ const Setting = ({ onRestart, onChangePairCards, countPairCard }) => {
           <input
             type="range"
             min="4"
-            max={2 * MemoryMaxPairCards}
+            max={2 * MEMORY_MAX_PAIR_CARDS}
             step="2"
             value={2 * countPairs}
             onChange={handleCountPairsChange}

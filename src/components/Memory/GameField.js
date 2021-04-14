@@ -1,10 +1,9 @@
 import React from "react";
-import "./Memory.css";
 import Card from "./Card";
 
 const GameField = ({ cards, rotateCard }) => {
   return (
-    <ul className="memory__cards">
+    <ul className="memory__game-field">
       {cards.map((item) => (
         <Card key={item.id} card={item} onRotate={rotateCard} />
       ))}

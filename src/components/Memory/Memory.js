@@ -1,7 +1,7 @@
 import React from "react";
-import "./Memory.css";
-import { timeDelay } from "../../utils/constants";
-import { MemoryMaxPairCards } from "../../utils/constants";
+import "../../styles/Memory.css";
+import { TIME_DELAY } from "../../utils/constants";
+import { MEMORY_MAX_PAIR_CARDS } from "../../utils/constants";
 import { LoadingContext } from "../../contexts/LoadingContext";
 import GameField from "./GameField";
 import Setting from "./Setting";
@@ -43,7 +43,7 @@ const Memory = () => {
         )
       );
       setIsLoading(false);
-    }, timeDelay);
+    }, TIME_DELAY);
   };
 
   const handleCardOpen = () => {
@@ -65,11 +65,11 @@ const Memory = () => {
       if (openCards.counter + 2 === countPairCards * 2) {
         setIsEndGame(true);
       }
-    }, timeDelay);
+    }, TIME_DELAY);
   };
 
   const handleGameRestart = () => {
-    const valuesGenerated = [...Array(MemoryMaxPairCards)].map((item, index) => index);
+    const valuesGenerated = [...Array(MEMORY_MAX_PAIR_CARDS)].map((item, index) => index);
     valuesGenerated.sort(() => Math.random() - 0.5);
     const values = valuesGenerated.slice(0, countPairCards) 
     setValues(values);
@@ -81,7 +81,7 @@ const Memory = () => {
         return { value, id: index, isHidden: true, isOpen: false };
       })
     );
-    setOpenCards({ ...openCards, counter: 0 });
+    setOpenCards({ counter: 0, values: [] });
     setIsEndGame(false);
   };
 
@@ -110,7 +110,7 @@ const Memory = () => {
 
   return (
     <section className="game memory">
-      <h2 className="game__status">
+      <h2 className={`game__status ${isEndGame && "game__status_end-res_victory game__status_end"}`}>
         {isEndGame
           ? `you won`
           : `open = ${openCards.counter} do = ${
@@ -126,7 +126,7 @@ const Memory = () => {
         <GameField rotateCard={handleCardRotate} cards={cards} />
       </LoadingContext.Provider>
       <p className="game__description">Description</p>
-      <div className="images">
+      <div className="memory__images">
         {values.map(value =>
           <Picture key={value} color={`${openCards.values.some(item => value === item)? "#ff0" : "#0ff"}`} index={value} />)}
       </div>

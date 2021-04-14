@@ -1,0 +1,13 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.board__cell_winner {
+  background-color: #09f5;
+  animation: rotation 5s linear 1;
+}

@@ -1,0 +1,8 @@
+.app {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 0 30px;
+  min-height: calc(100vh - 30px);
+  background-color: #ccc;
+  font-family: "Arial", "Helvetica", sans-serif;
+}

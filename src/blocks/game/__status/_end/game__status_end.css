@@ -1,0 +1,30 @@
+@keyframes victory {
+  from {
+    position: relative;
+    top: 50%;
+    left: 0;
+    z-index: 100;
+    background-color: #ccc9;
+    transform: translate(0, -50%) scale(5);
+  }
+  to {
+  }
+}
+
+.game__status_end {
+  position: relative;
+  top: 50%;
+  left: 0;
+  z-index: 100;
+  background-color: #fff;
+  border-top-right-radius: 15px 50%;
+  border-top-left-radius: 15px 50%;
+  border-bottom-right-radius: 15px 50%;
+  border-bottom-left-radius: 15px 50%;
+  animation: victory 5s linear 1;
+  transform: scale(2) translate(0, -50%);
+}
+
+.game__status_end:hover {
+  box-shadow: 0 2px 5px #333;
+}

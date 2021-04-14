@@ -1,0 +1,19 @@
+.history__step {
+  margin: 0;
+  padding: 5px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 18px;
+  font-style: normal;
+  font-weight: normal;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.history__step:hover {
+  box-shadow: 0 2px 5px #333;
+  opacity: 0.8;
+  cursor: pointer;
+}

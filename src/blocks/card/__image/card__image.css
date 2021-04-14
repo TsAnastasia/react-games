@@ -1,0 +1,15 @@
+.card__image {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+  font-size: 32px;
+  line-height: 34px;
+  font-style: normal;
+  background-color: #fff;
+  backface-visibility: hidden;
+  transform: rotateY(0);
+  transition: transform linear 0.5s;
+}

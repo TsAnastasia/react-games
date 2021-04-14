@@ -1,0 +1,18 @@
+.game__settings-item {
+  margin: 10px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 18px;
+  font-style: normal;
+  font-weight: normal;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.game__settings-item:hover {
+  box-shadow: 0 2px 5px #333;
+  opacity: 0.8;
+  cursor: pointer;
+}
