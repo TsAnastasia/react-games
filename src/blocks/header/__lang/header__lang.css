@@ -5,8 +5,3 @@
   font-weight: normal;
   transition: opacity ease-in-out 0.3s;
 }
-
-.header__lang:hover {
-  opacity: 0.6;
-  cursor: pointer;
-}

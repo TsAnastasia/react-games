@@ -1,0 +1,11 @@
+.app__nav {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 500;
+  border-radius: 0 0 5px 5px;
+  background-image: linear-gradient(to bottom, #bbb, #ccc);
+  box-shadow: 0 0 5px 2px #333;
+}

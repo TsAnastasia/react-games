@@ -10,7 +10,6 @@
 @import url("../blocks/cross-zeros/__field-button/cross-zeros__field-button.css");
 
 @import url("../blocks/board/board.css");
-@import url("../blocks/board/_game-end/board_game-end.css");
 @import url("../blocks/board/__row/board__row.css");
 @import url("../blocks/board/__cell/board__cell.css");
 @import url("../blocks/board/__cell/_active/board__cell_active.css");

@@ -1,0 +1,9 @@
+.app__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app__link:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}

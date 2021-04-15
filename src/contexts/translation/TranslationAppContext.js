@@ -7,7 +7,8 @@ export const translationApp = {
     projectName: "Игры на React", 
     projectDescription: "ru description",
     home: "Игры на React",
-    crossZero: "Крестики-Нолики",
+    homeLink: "На главную",
+    crossZeros: "Крестики-Нолики",
     memory: "Парочки",
     notFoundPageTitle: "404 - Страница не найдена",
     notFoundPageDescription: "Здесь ничего нет."
@@ -18,7 +19,8 @@ export const translationApp = {
     projectName: "Games on React",
     projectDescription: "en description",
     home: "Games on React",
-    crossZero: "Tic tac toe",
+    homeLink: "Home",
+    crossZeros: "Tic tac toe",
     memory: "Memory (pairs)",
     notFoundPageTitle: "404 - Page not found",
     notFoundPageDescription: "There's nothing here."

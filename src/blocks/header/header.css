@@ -1,8 +1,10 @@
 .header {
+  padding: 20px 10px 15px;
   position: relative;
+  z-index: 501;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   background-image: linear-gradient(to bottom, #999, #ccc);
   box-shadow: 0 2px 5px #333;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
 }

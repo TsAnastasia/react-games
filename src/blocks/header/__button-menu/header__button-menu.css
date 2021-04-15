@@ -1,0 +1,11 @@
+.header__button-menu{
+  margin: 0 5px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+}

@@ -15,6 +15,7 @@ const Board = (props) => {
               squares={props.squares}
               isActive={props.activeCell && props.activeCell.row === row && props.activeCell.column === column}
               isWinner={props.winnerCells && props.winnerCells.some(item => item === 3 * row + column)}
+              isOpen={props.squares.some((item, index) => item && index === 3 * row + column)}
               isEndGame={props.isEndGame}
             />
           ))}
