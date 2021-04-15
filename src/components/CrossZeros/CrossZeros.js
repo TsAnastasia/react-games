@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/CrossZeros.css"
 import Board from "./Board";
 import History from "./History";
 import { TranslationCrossZeroContext } from "../../contexts/translation/TranslationCrossZeroContext";
@@ -92,35 +91,33 @@ const CrossZero = (props) => {
 
   return (
     <section className="game cross-zeros">
-      <Status 
-        isEndGame={isEndGame} 
-        winner={winner} 
-        isXPlaying={isXPlaying} 
-      />
-      <div className="cross-zeros__field">
-        <button
-          className={`cross-zeros__field-button game__button ${stepNumber === 0 && "game__button_hidden"}`}
-          type="button"
-          onClick={hadbleBackClick}
-        >
-          &larr;
-        </button>
-        <Board
-          squares={current.squares}
-          onClick={handleCellClick}
-          activeCell={current.activeCell || null}
-          winnerCells={winnerCells}
-          isEndGame={isEndGame}
+      <div className="game__field">
+        <Status 
+          isEndGame={isEndGame} 
+          winner={winner} 
+          isXPlaying={isXPlaying} 
         />
-        <button
-          className={`cross-zeros__field-button game__button ${stepNumber === history.length - 1 && "game__button_hidden"}`}
-          type="button"
-          onClick={handleNextClick}
-        >
-          &rarr;
-        </button>
+        <div className="cross-zeros__field">
+          <button
+            className={`cross-zeros__field-button game__button ${stepNumber === 0 && "game__button_hidden"}`}
+            type="button"
+            onClick={hadbleBackClick}
+          >&larr;</button>
+          <Board
+            squares={current.squares}
+            onClick={handleCellClick}
+            activeCell={current.activeCell || null}
+            winnerCells={winnerCells}
+            isEndGame={isEndGame}
+          />
+          <button
+            className={`cross-zeros__field-button game__button ${stepNumber === history.length - 1 && "game__button_hidden"}`}
+            type="button"
+            onClick={handleNextClick}
+          >&rarr;</button>
+        </div>
       </div>
-      <div className="game__settings">
+      <div className="game__settings game__settings_size_s">
         <button
           className="game__settings-item"
           type="button"

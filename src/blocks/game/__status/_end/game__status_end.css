@@ -1,28 +1,24 @@
 @keyframes victory {
   from {
-    position: relative;
-    top: 50%;
-    left: 0;
-    z-index: 100;
-    background-color: #ccc9;
-    transform: translate(0, -50%) scale(5);
+    transform: translate(0, -25%) scale(5);
   }
   to {
   }
 }
 
 .game__status_end {
+  display: inline-block;
   position: relative;
   top: 50%;
   left: 0;
   z-index: 100;
-  background-color: #fff;
+  background-image: radial-gradient(#fff, #fff9);
   border-top-right-radius: 15px 50%;
   border-top-left-radius: 15px 50%;
   border-bottom-right-radius: 15px 50%;
   border-bottom-left-radius: 15px 50%;
   animation: victory 5s linear 1;
-  transform: scale(2) translate(0, -50%);
+  transform: translate(0, -25%) scale(2);
 }
 
 .game__status_end:hover {

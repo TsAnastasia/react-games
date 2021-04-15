@@ -1,8 +1,8 @@
 .history__title {
-  margin: 0 0 10px;
+  margin: 0;
   padding: 5px;
   font-size: 18px;
-  list-style: 20px;
+  line-height: 20px;
   font-style: normal;
   font-weight: bold;
   color: #059;

@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 import { translationApp, TranslationAppContext } from "../contexts/translation/TranslationAppContext";
 import { translationCroossZero, TranslationCrossZeroContext } from "../contexts/translation/TranslationCrossZeroContext";
 import { translationMemory, TranslationMemoryContext } from "../contexts/translation/TranslationMemoryContext";
-import '../styles/App.css';
 import { BASE_URL } from "../utils/constants";
 import CrossZeros from "./CrossZeros/CrossZeros";
 import Footer from "./Footer";

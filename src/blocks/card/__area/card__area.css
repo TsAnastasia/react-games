@@ -7,4 +7,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+  background-color: #ddd;
+  transition: transform linear 1s;
+  backface-visibility: hidden;
+}
+
+.card__area:hover {
+  box-shadow: 0 0px 5px 1px #059;
 }

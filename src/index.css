@@ -1,1 +1,69 @@
 @import url("./vendor/normalize.css");
+
+@import url("./blocks/app/app.css");
+@import url("./blocks/app/__link/app__link.css");
+@import url("./blocks/app/__link/_title/app__link_title.css");
+@import url("./blocks/app/__header/app__header.css");
+@import url("./blocks/app/__nav/app__nav.css");
+@import url("./blocks/app/__content/app__content.css");
+@import url("./blocks/app/__footer/app__footer.css");
+
+@import url("./blocks/header/header.css");
+@import url("./blocks/header/__title/header__title.css");
+@import url("./blocks/header/__langs/header__langs.css");
+@import url("./blocks/header/__langs-item/header__langs-item.css");
+@import url("./blocks/header/__lang/header__lang.css");
+@import url("./blocks/header/__lang/_active/header__lang_active.css");
+@import url("./blocks/header/__button-menu/header__button-menu.css");
+
+@import url("./blocks/menu/menu.css");
+@import url("./blocks/menu/__item/menu__item.css");
+@import url("./blocks/menu/__link/menu__link.css");
+@import url("./blocks/menu/__link/_active/menu__link_active.css");
+
+@import url("./blocks/footer/footer.css");
+@import url("./blocks/footer/__copyright/footer__copyright.css");
+
+@import url("./blocks/game/game.css");
+@import url("./blocks/game/__field/game__field.css");
+@import url("./blocks/game/__status/game__status.css");
+@import url("./blocks/game/__status/_end/game__status_end.css");
+@import url("./blocks/game/__status/_end-res/game__status_end-res_victory.css");
+@import url("./blocks/game/__status/_end-res/game__status_end-res_lose.css");
+@import url("./blocks/game/__button/game__button.css");
+@import url("./blocks/game/__button/_hidden/game__button_hidden.css");
+@import url("./blocks/game/__settings/game__settings.css");
+@import url("./blocks/game/__settings/_size/game__settings_size_s.css");
+@import url("./blocks/game/__settings/_size/game__settings_size_m.css");
+@import url("./blocks/game/__settings-item/game__settings-item.css");
+@import url("./blocks/game/__settings-range/game__settings-range.css");
+@import url("./blocks/game/__settings-input-range/game__settings-input-range.css");
+
+@import url("./blocks/cross-zeros/__field/cross-zeros__field.css");
+@import url("./blocks/cross-zeros/__field-button/cross-zeros__field-button.css");
+
+@import url("./blocks/board/board.css");
+@import url("./blocks/board/__row/board__row.css");
+@import url("./blocks/board/__cell/board__cell.css");
+@import url("./blocks/board/__cell/_active/board__cell_active.css");
+@import url("./blocks/board/__cell/_winner/board__cell_winner.css");
+
+@import url("./blocks/history/history.css");
+@import url("./blocks/history/__title/history__title.css");
+@import url("./blocks/history/__moves/history__moves.css");
+@import url("./blocks/history/__moves-item/history__moves-item.css");
+@import url("./blocks/history/__step/history__step.css");
+@import url("./blocks/history/__step/_active/history__step_active.css");
+
+@import url("./blocks/memory/__game-field/memory__game-field.css");
+@import url("./blocks/memory/__images/memory__images.css");
+@import url("./blocks/memory/__images-item/memory__images-item.css");
+
+@import url("./blocks/card/card.css");
+@import url("./blocks/card/__area/card__area.css");
+@import url("./blocks/card/__area/_hidden/card__area_hidden.css");
+@import url("./blocks/card/__image/card__image.css");
+@import url("./blocks/card/__area-image/card__area-image.css");
+@import url("./blocks/card/__image/_hidden/card__image_hidden.css");
+@import url("./blocks/card/__image/_open/card__image_open.css");
+@import url("./blocks/card/__image/_winner/card__image_winner.css");

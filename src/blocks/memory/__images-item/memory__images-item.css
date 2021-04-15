@@ -1,0 +1,7 @@
+.memory__images-item {
+  margin-right: 5px;
+}
+
+.memory__images-item:last-child {
+  margin-right: 0;
+}

@@ -13,15 +13,16 @@ const Setting = ({ onRestart, onChangePairCards, countPairCard }) => {
   }, [countPairCard]);
 
   return (
-    <div className="game__settings">
-      <button type="button" className="setting__again" onClick={onRestart}>
+    <div className="game__settings game__settings_size_m">
+      <button type="button" className="game__settings-item" onClick={onRestart}>
         again
       </button>
-      <div>
-        <label>
-          <span>{`${countPairCard * 2}`}</span>
+      <div className="game__settings-item">
+        <label className="game__settings-range" title="count cards">
+          <span className="game__settings-label">{`${countPairCard * 2}`}</span>
           <input
             type="range"
+            className="game__settings-input-range"
             min="4"
             max={2 * MEMORY_MAX_PAIR_CARDS}
             step="2"

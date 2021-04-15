@@ -1,11 +1,9 @@
-.board {
-  margin: 10px auto;
+.game__field {
+  margin: 0 auto;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #000;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px #333;
+  width: 100%;
 }

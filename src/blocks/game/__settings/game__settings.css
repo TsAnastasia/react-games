@@ -1,6 +1,6 @@
 .game__settings {
-  padding: 5px 10px;
-  min-width: 300px;
+  margin: 5px auto 10px;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;

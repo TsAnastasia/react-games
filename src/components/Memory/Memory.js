@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/Memory.css";
 import { TIME_DELAY } from "../../utils/constants";
 import { MEMORY_MAX_PAIR_CARDS } from "../../utils/constants";
 import { LoadingContext } from "../../contexts/LoadingContext";
@@ -38,8 +37,7 @@ const Memory = () => {
       setCards(
         cards.map((item) =>
           item.id === rotateCards[0].id || item.id === rotateCards[1].id
-            ? { ...item, isHidden: true }
-            : item
+            ? { ...item, isHidden: true } : item
         )
       );
       setIsLoading(false);
@@ -47,12 +45,12 @@ const Memory = () => {
   };
 
   const handleCardOpen = () => {
+    setIsLoading(true);
     setTimeout(() => {
       setCards(
         cards.map((item) =>
           item.id === rotateCards[0].id || item.id === rotateCards[1].id
-            ? { ...item, isOpen: true }
-            : item
+            ? { ...item, isOpen: true } : item
         )
       );
       setOpenCards({
@@ -60,11 +58,10 @@ const Memory = () => {
         counter: openCards.counter + 2,
         values: openCards.values.concat(rotateCards[0].value),
       });
-      console.log()
-      setIsLoading(false);
       if (openCards.counter + 2 === countPairCards * 2) {
         setIsEndGame(true);
       }
+      setIsLoading(false);
     }, TIME_DELAY);
   };
 
@@ -110,25 +107,27 @@ const Memory = () => {
 
   return (
     <section className="game memory">
-      <h2 className={`game__status ${isEndGame && "game__status_end-res_victory game__status_end"}`}>
-        {isEndGame
-          ? `you won`
-          : `open = ${openCards.counter} do = ${
-              countPairCards * 2 - openCards.counter
-            }`}
-      </h2>
-      <Setting
-        onRestart={handleGameRestart}
-        onChangePairCards={handleCountCardsChange}
-        countPairCard={countPairCards}
-      />
-      <LoadingContext.Provider value={isLoading}>
-        <GameField rotateCard={handleCardRotate} cards={cards} />
-      </LoadingContext.Provider>
+      <div className="game__field">
+        <h2 className={`game__status ${isEndGame && "game__status_end-res_victory game__status_end"}`}>
+          {isEndGame
+            ? `you won`
+            : `open = ${openCards.counter} do = ${countPairCards * 2 - openCards.counter}`}
+        </h2>
+        <Setting
+          onRestart={handleGameRestart}
+          onChangePairCards={handleCountCardsChange}
+          countPairCard={countPairCards}
+        />
+        <LoadingContext.Provider value={isLoading}>
+          <GameField rotateCard={handleCardRotate} cards={cards} isEndGame={isEndGame}/>
+        </LoadingContext.Provider>
+      </div>
       <p className="game__description">Description</p>
       <div className="memory__images">
         {values.map(value =>
-          <Picture key={value} color={`${openCards.values.some(item => value === item)? "#ff0" : "#0ff"}`} index={value} />)}
+          <div className="memory__images-item">
+            <Picture key={value} color={`${openCards.values.some(item => value === item)? "#09f5" : "#0595"}`} index={value} />
+            </div>)}
       </div>
     </section>
   );

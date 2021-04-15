@@ -1,0 +1,15 @@
+@keyframes twist {
+  from {
+    transform: rotate(0) scale(2);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(2);
+  }
+}
+
+.card__area-image {
+  animation: twist 10s linear infinite;
+}

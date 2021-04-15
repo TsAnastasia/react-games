@@ -1,0 +1,12 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card__image_winner {
+  animation: rotation 5s linear 1;
+}
