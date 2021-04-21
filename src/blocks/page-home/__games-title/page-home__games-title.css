@@ -1,0 +1,10 @@
+.page-home__games-title {
+  margin: 0 auto 10px;
+  padding: 0;
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 22px;
+  color: #059;
+}

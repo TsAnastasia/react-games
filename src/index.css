@@ -24,6 +24,14 @@
 @import url("./blocks/footer/footer.css");
 @import url("./blocks/footer/__copyright/footer__copyright.css");
 
+@import url("./blocks/page-home/page-home.css");
+@import url("./blocks/page-home/__description/page-home__description.css");
+@import url("./blocks/page-home/__nav/page-home__nav.css");
+@import url("./blocks/page-home/__games/page-home__games.css");
+@import url("./blocks/page-home/__games-title/page-home__games-title.css");
+@import url("./blocks/page-home/__games-item/page-home__games-item.css");
+@import url("./blocks/page-home/__link/page-home__link.css");
+
 @import url("./blocks/page-not-found/page-not-found.css");
 @import url("./blocks/page-not-found/__image/page-not-found__image.css");
 @import url("./blocks/page-not-found/__title/page-not-found__title.css");

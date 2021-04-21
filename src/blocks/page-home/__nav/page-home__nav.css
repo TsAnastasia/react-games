@@ -1,0 +1,7 @@
+.page-home__nav {
+  margin: 20px auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}

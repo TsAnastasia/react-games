@@ -1,0 +1,11 @@
+.page-home__games {
+  margin: 0 auto;
+  min-width: 220px;
+  padding: 15px 30px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  box-shadow: 0 0 5px #333;
+  border-radius: 5px;
+}
