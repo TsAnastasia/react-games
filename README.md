@@ -2,16 +2,9 @@
 
 ## About
 
-This is a simple app to understand the React with interactive game tic-tac-toe.
+This is a simple app to understand the React with interactive games: tic-tac-toe and memory.
 
 **Author:** Anastasia Tsibernaya, 2021
-
-______________________
-## TO DO
-* Translation memory
-* + Style not found page
-* home page
-____________________________
 
 **[Try](https://tsanastasia.github.io/react-games)**
 

@@ -1,7 +1,9 @@
 import React from "react";
+import { TranslationMemoryContext } from "../../contexts/translation/TranslationMemoryContext";
 import { MEMORY_MAX_PAIR_CARDS } from "../../utils/constants";
 
 const Setting = ({ onRestart, onChangePairCards, countPairCard }) => {
+  const translation = React.useContext(TranslationMemoryContext);
   const [countPairs, setCountState] = React.useState(countPairCard);
 
   const handleCountPairsChange = (event) => {
@@ -15,7 +17,7 @@ const Setting = ({ onRestart, onChangePairCards, countPairCard }) => {
   return (
     <div className="game__settings game__settings_size_m">
       <button type="button" className="game__settings-item" onClick={onRestart}>
-        again
+        {translation.settingAgain}
       </button>
       <div className="game__settings-item">
         <label className="game__settings-range" title="count cards">

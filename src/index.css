@@ -51,6 +51,7 @@
 @import url("./blocks/game/__settings-item/game__settings-item.css");
 @import url("./blocks/game/__settings-range/game__settings-range.css");
 @import url("./blocks/game/__settings-input-range/game__settings-input-range.css");
+@import url("./blocks/game/__description/game__description.css");
 
 @import url("./blocks/cross-zeros/__field/cross-zeros__field.css");
 @import url("./blocks/cross-zeros/__field-button/cross-zeros__field-button.css");

@@ -31,7 +31,7 @@ const App = () => {
             </Route>
             <Route path={`${BASE_URL}/memory`}>
               <TranslationMemoryContext.Provider value={translationMemory[lang]}>
-               <Memory />
+                <Memory />
               </TranslationMemoryContext.Provider>
             </Route>
             <Route path="*">

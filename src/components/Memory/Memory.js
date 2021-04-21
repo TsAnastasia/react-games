@@ -5,8 +5,10 @@ import { LoadingContext } from "../../contexts/LoadingContext";
 import GameField from "./GameField";
 import Setting from "./Setting";
 import Picture from "../Picture";
+import { TranslationMemoryContext } from "../../contexts/translation/TranslationMemoryContext";
 
 const Memory = () => {
+  const translation = React.useContext(TranslationMemoryContext);
   const [countPairCards, setCountPairCards] = React.useState(6);
   const [values, setValues] = React.useState([])
   const [cards, setCards] = React.useState([]);
@@ -88,6 +90,7 @@ const Memory = () => {
 
   React.useEffect(() => {
     handleGameRestart();
+    console.log(translation.settingAgain)
   }, []);
 
   React.useEffect(() => {
@@ -108,10 +111,16 @@ const Memory = () => {
   return (
     <section className="game memory">
       <div className="game__field">
-        <h2 className={`game__status ${isEndGame && "game__status_end-res_victory game__status_end"}`}>
+        <h2
+          className={`game__status ${
+            isEndGame && "game__status_end-res_victory game__status_end"
+          }`}
+        >
           {isEndGame
-            ? `you won`
-            : `open = ${openCards.counter} do = ${countPairCards * 2 - openCards.counter}`}
+            ? translation.statusWon
+            : `${translation.statusOpened}: ${openCards.counter}, ${translation.statusToOpen}: ${
+                countPairCards * 2 - openCards.counter
+              }`}
         </h2>
         <Setting
           onRestart={handleGameRestart}
@@ -119,15 +128,31 @@ const Memory = () => {
           countPairCard={countPairCards}
         />
         <LoadingContext.Provider value={isLoading}>
-          <GameField rotateCard={handleCardRotate} cards={cards} isEndGame={isEndGame}/>
+          <GameField
+            rotateCard={handleCardRotate}
+            cards={cards}
+            isEndGame={isEndGame}
+          />
         </LoadingContext.Provider>
       </div>
-      <p className="game__description">Description</p>
+      {translation.description.split("\n").map((item, index) => (
+        <p key={index} className="game__description">
+          {item}
+        </p>
+      ))}
       <div className="memory__images">
-        {values.map(value =>
-          <div className="memory__images-item">
-            <Picture key={value} color={`${openCards.values.some(item => value === item)? "#09f5" : "#0595"}`} index={value} />
-            </div>)}
+        {values.map((value) => (
+          <div key={value} className="memory__images-item">
+            <Picture
+              color={`${
+                openCards.values.some((item) => value === item)
+                  ? "#09f5"
+                  : "#0595"
+              }`}
+              index={value}
+            />
+          </div>
+        ))}
       </div>
     </section>
   );
