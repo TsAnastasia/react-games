@@ -9,7 +9,7 @@ This is a simple app to understand the React with interactive game tic-tac-toe.
 ______________________
 ## TO DO
 * Translation memory
-* Style not found page
+* + Style not found page
 * home page
 ____________________________
 
