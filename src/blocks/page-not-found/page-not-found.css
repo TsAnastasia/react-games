@@ -1,0 +1,6 @@
+.page-not-found{
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
